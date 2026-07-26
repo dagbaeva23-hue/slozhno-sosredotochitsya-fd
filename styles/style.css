@@ -167,44 +167,49 @@
 }
 
 /* Секция с картинками */
+.title_decor {
+  margin-bottom: 20px;
+}
 
-.pictures__grid {
+.section_pictures {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);  /* 6 колонок */
-  grid-auto-rows: 150px;
-  gap: 10px;
-  grid-auto-flow: dense;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-auto-rows: 200px; 
+  gap: 16px;
 }
 
-/* Растягиваем некоторые картинки */
-.pictures__item:first-child {
+.pictures__item {
+  margin: 0;
+  overflow: hidden;
+}
+
+.pictures__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.pictures__item--1 {
   grid-column: span 2;
-  grid-row: span 2;
 }
 
-.pictures__item:nth-child(2) {
-  grid-column: span 2;
-  grid-row: span 1;
-}
-
-.pictures__item:nth-child(3) {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.pictures__item:nth-child(4) {
-  grid-column: span 3;
-  grid-row: span 1;
-}
-
-.pictures__item:nth-child(5) {
+.pictures__item--2 {
   grid-column: span 1;
   grid-row: span 2;
 }
 
-.pictures__item:nth-child(6) {
+.pictures__item--3 {
+  grid-row: span 2;
+}
+
+.pictures__item--4 {
+  grid-column: span 1;
+}
+
+/* 5. Улица (широкая) — занимает 2 колонки */
+.pictures__item--5 {
   grid-column: span 2;
-  grid-row: span 1;
 }
 
 /* Адаптив */
