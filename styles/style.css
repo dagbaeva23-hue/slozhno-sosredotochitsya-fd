@@ -1,12 +1,10 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+/* Основные стили проекта */
 .page {
   background-image: var(--bg-image);
   background-color: var(--bg-color);
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  color: var(--main-text-color);
   max-width: 1024px;
   font-family: 'IBM Plex mono', monospace;
   font-size: var(--main-text-fontsize);
@@ -14,26 +12,53 @@
   font-weight: bold;
 }
 
-.header, .footer {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(24, 1fr);
-  height: 100vh;
+/* ----- HEADER & FOOTER ----- */
+.header,
+.footer {
+  height: 768px;
   position: relative;
+  display: flex;
 }
 
+.header {
+  background-image:  var(--bg-image-header);
+  background-size: cover;       
+  background-repeat: no-repeat; 
+  background-position: center; 
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.footer {
+  align-items: center;
+  justify-content: center;
+}
+
+.header_title,
+.footer_title {
+  font-size: clamp(116px, 10vw, 157px);
+  color: var(--title-text-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  margin: 0;
+  padding-left: 4px;
+}
+
+/* ----- МЕНЮ ----- */
 .header__theme-menu {
   position: absolute;
-  top: 20px;
-  width: 100%;  
+  top: 19px;
+  width: 100%;
+  color: var(--corner-color)
 }
 
 .header__theme-menu-list {
   display: flex;
-  flex-direction: row;      
   justify-content: center;
   gap: 20px;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .header__theme-menu-button {
@@ -44,56 +69,50 @@
   cursor: pointer;
 }
 
+.header__theme-menu-button:focus,
 .header__theme-menu-button_active {
-  border: 1px solid var(--main-text-color);  
-  pointer-events: none;                   
+  border: 1px solid var(--corner-color);
+  width: 70px;
 }
 
-.header__theme-menu-button:hover {
-  border: 1px solid var(--main-text-color);
-}
-
-.header_title {
-  font-size: clamp(116px, 10vw, 157px);
-  color: var(--title-text-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
-  grid-row: 10/11;
-  grid-column: 1/12;
-  align-self: center;     
-  justify-self: start;     
-  margin: 0;
-}
-
-.footer_title {
-  font-size: clamp(116px, 10vw, 157px);
-  color: var(--title-text-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
-  grid-row: 10/11;
-  grid-column: 5/12;
-  align-self: center;     
-  justify-self: start;     
-  margin: 0;
-}
-
-.title_decor {
+/* REC скрыт по умолчанию */
+.header_rec {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--accent-color);
   font-size: 18px;
-  color: var(--main-text-color);
+  font-family: 'IBM Plex mono', monospace;
+  font-weight: normal;
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.rec-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
   background-color: var(--accent-color);
+  border-radius: 50%;
+  filter: blur(2px);
+  margin-right: 5px;
 }
 
+.theme-dark .header_rec {
+  display: flex;
+}
+
+/* ----- ОПИСАНИЕ В ХЕДЕРЕ ----- */
 .header__description {
-  grid-row: 14/15;
-  grid-column: 7/13;
-  justify-self: end;        
-  max-width: 500px;    
-  margin-right: 20px;     
+  position: absolute;
+  bottom: 136px;
+  right: 15px;
+  max-width: 491px;
+  margin: 0;
 }
 
-.decorated-zone {
-  position: relative;
-}
-
-/* Общие стили для всех уголков */
+/* ----- УГОЛКИ (декоративные) ----- */
 .decorated-zone::before,
 .decorated-zone::after {
   content: "";
@@ -102,29 +121,30 @@
   height: 25px;
 }
 
-/* Индивидуальные позиции */
 .decorated-zone::before {
   bottom: 20px;
-  left: 20px;
+  left: 23px;
   border-left: 1px solid var(--corner-color);
   border-bottom: 1px solid var(--corner-color);
 }
 
 .decorated-zone::after {
   top: 20px;
-  right: 20px;
+  right: 17px;
   border-right: 1px solid var(--corner-color);
   border-top: 1px solid var(--corner-color);
 }
 
-.wrapper {
-  margin: 0 20px;
+/* ----- ОСНОВНЫЕ СТИЛИ ----- */
+.main-content {
+  margin: 0 16px 0 25px;
 }
 
 .section {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 10px;
+  gap: 9px;
+  margin-bottom: 80px;
 }
 
 .section_title {
@@ -134,10 +154,14 @@
 .section_text {
   font-weight: normal;
   font-size: var(--main-text-fontsize);
+  line-height: 23.4px;
 }
 
-.section_text-bottom {
-  margin-bottom: 14px;
+.title_decor {
+  font-size: 18px;
+  color: var(--main-text-color);
+  background-color: var(--accent-color);
+  margin: 0;
 }
 
 .another_title_decor {
@@ -147,16 +171,18 @@
 .section_content {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
-/* Что снижает концентрацию внимания */
+/* ----- СЕКЦИЯ "ЧТО СНИЖАЕТ КОНЦЕНТРАЦИЮ" ----- */
+.distractions {
+  margin-bottom: 80px;
+}
 
 .distractions__wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  align-items: stretch; 
+  align-items: stretch;
 }
 
 .distractions_content {
@@ -166,15 +192,24 @@
   height: 100%;
 }
 
-/* Секция с картинками */
-.title_decor {
+.width_title {
+  max-width: 315px;
+}
+
+/* ----- СЕКЦИЯ "РЕШЕНИЕ" ----- */
+.solution_block:not(:last-child) {
   margin-bottom: 20px;
+}
+
+/* ----- СЕКЦИЯ С КАРТИНКАМИ ----- */
+.pictures {
+  margin-bottom: 67px;
 }
 
 .section_pictures {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  grid-auto-rows: 200px; 
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(260px, auto);
   gap: 16px;
 }
 
@@ -187,79 +222,154 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
-.pictures__item--1 {
+.pictures__item--1, .pictures__item--5 {
   grid-column: span 2;
 }
 
-.pictures__item--2 {
-  grid-column: span 1;
+.pictures__item--2, .pictures__item--3 {
   grid-row: span 2;
 }
 
-.pictures__item--3 {
-  grid-row: span 2;
+
+/* ===== УНИВЕРСАЛЬНЫЕ УТИЛИТЫ ДЛЯ ОТСТУПОВ ===== */
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-19 {
+  margin-bottom: 19px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-22 {
+  margin-bottom: 22px;
+}
+.mb-67 {
+  margin-bottom: 67px;
 }
 
-.pictures__item--4 {
-  grid-column: span 1;
-}
-
-/* 5. Улица (широкая) — занимает 2 колонки */
-.pictures__item--5 {
-  grid-column: span 2;
-}
-
-/* Адаптив */
+/* ===== АДАПТИВ ===== */
 @media (max-width: 768px) {
-  .pictures__grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 120px;
+  .header__theme-menu-list {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    padding-right: 20px;
+    padding-top: 192px;
   }
-  
-  .pictures__item:first-child,
-  .pictures__item:nth-child(2),
-  .pictures__item:nth-child(3),
-  .pictures__item:nth-child(4),
-  .pictures__item:nth-child(5),
-  .pictures__item:nth-child(6) {
+
+  .header,
+  .footer {
+    height: 1024px;
+  }
+
+  .header__description {
+    bottom: 183px;
+    max-width: 364px;
+}
+
+  .header_title, .footer_title {
+    font-size: 120px;
+  }
+
+   .width_title {
+    max-width: 236px;
+  }
+
+  .distractions__wrapper {
+  grid-template-columns: 1fr;
+}
+}
+
+
+@media (max-width: 375px) {
+ .header__theme-menu-list {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    padding-right: 10px;
+    padding-top: 75px;
+    margin-bottom: 65px;
+  }
+
+  .header,
+  .footer {
+    height: 668px;
+  }
+
+ .header_title {
+    font-size: 116px;
+    margin-bottom: 55px;
+    line-height: 82.5%;
+  }
+
+  .header__description {
+    bottom: 66px;
+    left: 10px;
+  }
+
+  .decorated-zone::before {
+  bottom: 10px;
+  left: 10px;
+  }
+
+.decorated-zone::after {
+  top: 10px;
+  right: 10px;
+  }
+
+  .main-content {
+    margin: 0 10px;
+  }
+
+  .section,
+  .distractions__wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .section, .distractions {
+    margin-bottom: 50px;
+  }
+
+  .section_title {
+    margin-bottom: 20px;
+  }
+
+  .width_title {
+    max-width: 355px;
+  }
+
+  .pictures {
+    margin-bottom: 40px;
+  }
+
+ .section_pictures {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    grid-auto-rows: auto;
+  }
+
+  .pictures__item {
+    max-height: 400px; 
+  }
+
+  .pictures__image {
+    height: 100%;
+    object-fit: contain; 
+  }
+
+  .pictures__item--1,
+  .pictures__item--2,
+  .pictures__item--3,
+  .pictures__item--4,
+  .pictures__item--5 {
     grid-column: span 1;
     grid-row: span 1;
   }
 }
 
-@media (max-width: 768px) {
-  
-  .header__theme-menu-list {
-    justify-content: flex-end;  
-    flex-direction: column;    
-    align-items: flex-end; 
-    gap: 10px;
-    padding-right: 20px; 
-    padding-top: 192px;
-  }
 
-  .header_title {
-    white-space: normal;      
-    word-break: break-word;
-    max-width: 90%;           
-  }
-
-  .section, .distractions__wrapper {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-@media (max-width: 375px) {
-  
-  .header__theme-menu-list {
-    flex-direction: column;    
-    align-items: flex-end; 
-    gap: 10px;
-    padding-right: 10px; 
-    padding-top: 75px;
-  }
-}
+ 

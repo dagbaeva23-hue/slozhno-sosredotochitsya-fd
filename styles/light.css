@@ -5,4 +5,5 @@
 */
 
 :root.theme-light {
+  --bg-image-header: url(../images/cover-image-light.png);
 }
