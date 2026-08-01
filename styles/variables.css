@@ -11,3 +11,18 @@
   --corner-color: #353430;
   --main-text-fontsize: 18px;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-image: url(../images/cover-image-dark.png);
+    --bg-color: #000028;
+    --accent-color: #FF0070;
+    --title-text-color: #DB00FF;
+    --main-text-color: #F1B2CE;
+    --corner-color: #FF0070;
+  }
+
+  .header_rec {
+    display: flex;
+  }
+}
