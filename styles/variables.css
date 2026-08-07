@@ -2,27 +2,36 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
 :root {
   --bg-image: url(../images/cover-image-light.png);
   --bg-color: #FFEEF6;
-  --accent-color: #FF8DCB;
-  --title-text-color: #FFC2E6;
-  --main-text-color: #353430;
+  --header__description--text-color: #353430;
+  --header__description--bg-color: transparent; /* если нужно */
   --corner-color: #353430;
-  --main-text-fontsize: 18px;
+  --button-hover-opacity: rgb(50, 49, 45, 0.4);
+  --header_title-text-color: #FFC2E6;
+  --accent-color: #FF8DCB;
+  --section_title-text-color: #353430;
+  --section_title-text-color_h3: #353430;
+  --main-text-color: #353430;
+  --main-text_font-size: 18px;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-image: url(../images/cover-image-dark.png);
     --bg-color: #000028;
-    --accent-color: #FF0070;
-    --title-text-color: #DB00FF;
-    --main-text-color: #F1B2CE;
+    --header__description--text-color: #000028;
+    --header__description--bg-color: #FF0070;
     --corner-color: #FF0070;
-  }
-
-  .header_rec {
-    display: flex;
+    --button-hover-opacity: rgb(255, 0, 112, 0.4);
+    --header_title-text-color: #DB00FF;
+    --accent-color: #FF0070;
+    --section_title-text-color: #FF0070;
+    --section_title-text-color_h3: #000028;
+    --main-text-color: #F1B2CE;
   }
 }
+

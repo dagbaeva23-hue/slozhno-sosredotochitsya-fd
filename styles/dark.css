@@ -7,9 +7,13 @@
 :root.theme-dark {
   --bg-image: url(../images/cover-image-dark.png);
   --bg-color: #000028;
-  --accent-color: #FF0070;
-  --title-text-color: #DB00FF;
-  --main-text-color: #F1B2CE;
+  --header__description--text-color: #000028;
+  --header__description--bg-color: #FF0070;
   --corner-color: #FF0070;
-  --bg-image-header: url(../images/cover-image.png);
+  --button-hover-opacity: rgb(255, 0, 112 , 0.4);
+  --header_title-text-color: #DB00FF;
+  --accent-color: #FF0070;
+  --section_title-text-color: #FF0070;
+  --section_title-text-color_h3: #000028;
+  --main-text-color: #F1B2CE;
 }
