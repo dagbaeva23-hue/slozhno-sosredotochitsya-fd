@@ -56,6 +56,7 @@
   cursor: pointer;
   width: 70px;
   color: var(--corner-color);
+  outline: none;
 }
 
 .header__theme-menu-button_active {
@@ -178,6 +179,7 @@
 
 .section_text {
   line-height: 23.4px;
+  margin-bottom: 10px;
 }
 
 .link {
@@ -249,13 +251,12 @@
 .mb-huge {
   margin-bottom: 60px;
 }
-
 .mb-xl {
   margin-bottom: 80px;
 }
 
 /* ===== АДАПТИВ ===== */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .header__theme-menu {
     justify-self: end;  
     margin: 192px 20px 0 0;
@@ -295,8 +296,7 @@
   } 
 }
 
-
-@media (max-width: 375px) {
+@media (max-width: 767px) {
  .header__theme-menu {
     margin: 75px 20px 0 0;
   }
