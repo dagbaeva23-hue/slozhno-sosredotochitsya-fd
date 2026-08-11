@@ -16,3 +16,7 @@
   --section_title-text-color_h3: #353430;
   --main-text-color: #353430;
 }
+
+[class*="light"] .header_rec {
+  display: none;
+}

@@ -18,20 +18,3 @@
   --main-text_font-size: 18px;
 }
 
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-image: url(../images/cover-image-dark.png);
-    --bg-color: #000028;
-    --header__description--text-color: #000028;
-    --header__description--bg-color: #FF0070;
-    --corner-color: #FF0070;
-    --button-hover-opacity: rgb(255, 0, 112, 0.4);
-    --header_title-text-color: #DB00FF;
-    --accent-color: #FF0070;
-    --section_title-text-color: #FF0070;
-    --section_title-text-color_h3: #000028;
-    --main-text-color: #F1B2CE;
-  }
-}
-
